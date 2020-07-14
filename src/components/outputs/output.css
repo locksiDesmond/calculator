@@ -1,0 +1,32 @@
+.current-input {
+  display: flex;
+  justify-content: flex-end;
+}
+.output {
+  display: grid;
+  grid-template-rows: 4rem auto;
+  position: relative;
+  padding-right: 1rem;
+}
+.current-answer {
+  display: flex;
+  font-size: 2.5rem;
+  margin-left: auto;
+  font-weight: bold;
+}
+.hamburger {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+}
+
+.output > div {
+  padding: 0.3rem 1rem;
+  display: flex;
+}
+
+@media (min-width: 767px) {
+  .hamburger {
+    display: none;
+  }
+}

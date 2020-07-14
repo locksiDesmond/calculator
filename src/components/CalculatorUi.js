@@ -1,12 +1,14 @@
 import React from "react";
-import "./index.css";
 import Inputs from "./input/Inputs";
+import "./index.css";
 import Outputs from "./outputs/Outputs";
+import Sidenav from "./sidenav.js/Sidenav";
+
 export default function CalculatorUi() {
   return (
     <div className="body">
       <div style={{ backgroundColor: "blue" }} className="sidenav">
-        <p>sideNav</p>
+        <Sidenav />
       </div>
       <div
         style={{ backgroundColor: "#e5e5e5", color: "#000" }}

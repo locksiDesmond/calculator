@@ -1,9 +1,14 @@
 import React from "react";
 import "./App.css";
 import Calculator from "./components/Calculator";
+import { StateProvider } from "./store";
 
 function App() {
-  return <Calculator />;
+  return (
+    <StateProvider>
+      <Calculator />
+    </StateProvider>
+  );
 }
 
 export default App;

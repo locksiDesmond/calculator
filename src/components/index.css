@@ -21,3 +21,11 @@ body {
   padding: 0;
   grid-template-rows: 160px auto;
 }
+@media (min-width: 768px) {
+  .body {
+    grid-template-columns: 1fr 3fr;
+  }
+  .sidenav {
+    display: grid;
+  }
+}

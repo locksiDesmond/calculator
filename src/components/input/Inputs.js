@@ -1,29 +1,32 @@
 import React from "react";
 import InputDiv from "./InputDiv";
 import "./inputs.css";
-export default function Inputs() {
+export default function Inputs(props) {
   return (
     <div className="inputs">
-      <InputDiv value="1" />
-      <InputDiv value="2" />
-      <InputDiv value="3" />
-      <InputDiv value="4" />
-      <InputDiv value="5" />
-      <InputDiv value="6" />
-      <InputDiv value="7" />
-      <InputDiv value="8" />
-      <InputDiv value="9" />
-      <InputDiv value="0" />
-      <InputDiv value="+" />
-      <InputDiv value="-" />
-      <InputDiv value="X" />
-      <InputDiv value="enter" />
-      <InputDiv value="C" />
-      <InputDiv value="%" />
-      <InputDiv value="h" />
-      <InputDiv value="y" />
+      <InputDiv clear value="C" />
       <InputDiv value="i" />
-      <InputDiv value="/" />
+      <InputDiv arithmetic value="X" />
+      <InputDiv arithmetic value="/" />
+      <InputDiv number value="7" />
+      <InputDiv number value="8" />
+      <InputDiv number value="9" />
+      <InputDiv arithmetic value="+" />
+      <InputDiv number value="6" />
+      <InputDiv number value="5" />
+      <InputDiv number value="4" />
+      <InputDiv arithmetic value="-" />
+      <InputDiv number value="1" />
+      <InputDiv number value="2" />
+      <InputDiv number value="3" />{" "}
+      <InputDiv
+        style={{ gridRowStart: "4", gridRowEnd: "6", gridColumnStart: "4" }}
+        solve
+        value="="
+      />
+      <InputDiv value="del" delete />
+      <InputDiv number value="0" />
+      <InputDiv arithmetic value="." />
     </div>
   );
 }
