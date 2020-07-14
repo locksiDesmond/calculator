@@ -1,5 +1,6 @@
 import * as Types from "./Types";
 import { InputValue, handleArithmetic, Solve } from "./libs/handleInput";
+import { Daylight, NightMode } from "./ThemeColor";
 export function Reducer(state, action) {
   const { history, currentInput } = state;
   switch (action.type) {
@@ -29,7 +30,12 @@ export function Reducer(state, action) {
           { solution: stateSolution, arithmetic: stateArithmetic },
         ],
       };
-
+    case Types.TOGGLETHEME:
+      if (state.theme.mode === "daylight") {
+        return { ...state, theme: NightMode };
+      } else {
+        return { ...state, theme: Daylight };
+      }
     default:
       throw new Error();
   }

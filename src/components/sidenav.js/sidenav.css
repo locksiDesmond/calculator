@@ -4,7 +4,15 @@
   flex-direction: column;
   height: 95vh;
   overflow: hidden;
+  margin-top: 1rem;
 }
+
+.sidenav-div h1,
+.sidenav-div .by {
+  margin: 0;
+  align-self: center;
+}
+
 span.close {
   position: absolute;
   top: 0rem;
@@ -62,4 +70,9 @@ span.close {
 }
 .answer-value {
   margin-left: auto;
+}
+@media (min-width: 768px) {
+  .close {
+    display: none;
+  }
 }

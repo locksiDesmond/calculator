@@ -17,6 +17,8 @@ export const InputValue = (value, currentInput) => {
       let currentInputValue = currentInput;
       if (Number(currentInputValue)) {
         currentInputValue += value;
+      } else if (currentInputValue.length > 1) {
+        currentInputValue += value;
       } else {
         currentInputValue = "" + value;
       }
@@ -63,6 +65,9 @@ const checkvalue = (value, arithmeticValue) => {
     case ".":
       arithmeticValue += ".";
       return arithmeticValue;
+    case "%":
+      arithmeticValue += "%";
+      return arithmeticValue;
     default:
       return arithmeticValue;
   }
@@ -88,7 +93,11 @@ export const Solve = (value) => {
   if (Number(lastItem) || lastItem === "0") {
     const solve = new Evaluate();
     const result = solve.foo(value);
-    console.log(result);
     return result;
+  } else if (lastItem === "%") {
+    const newvalue = value.slice(0, value.length - 1);
+    const a = Number(newvalue) / 100;
+    return a;
+  } else {
   }
 };

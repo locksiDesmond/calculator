@@ -13,13 +13,29 @@ body {
 .body > * {
   padding: 1rem;
 }
-.sidenav {
-  display: none;
-}
 .calculator {
   display: grid;
   padding: 0;
   grid-template-rows: 160px auto;
+}
+
+@media (max-width: 767px) {
+  .sidenav {
+    width: 0;
+    height: 100vh;
+    opacity: 100%;
+    margin-right: 3rem;
+    padding: 0;
+    position: absolute;
+    transition: width 0.34s ease;
+  }
+  .sidenav.show {
+    display: grid;
+    position: absolute;
+    width: 15rem;
+    z-index: 3;
+    opacity: 100%;
+  }
 }
 @media (min-width: 768px) {
   .body {
@@ -27,5 +43,51 @@ body {
   }
   .sidenav {
     display: grid;
+  }
+}
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+/* animation: Loading 1s linear; */
+.page2 {
+  display: flex;
+}
+
+.page1 {
+  animation: Loading 4s linear;
+  z-index: 4;
+  top: -100vh;
+  margin: -100vh;
+  position: absolute;
+}
+
+@keyframes Loading {
+  0% {
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: -webkit-fill-available;
+    background-color: #fff;
+    opacity: 100%;
+    position: absolute;
+    z-index: 4;
+  }
+  50% {
+    background-color: #e5e5e5;
+    top: 10vh;
+    left: 10vh;
+  }
+  100% {
+    left: -100vh;
+    top: -100vh;
+    position: absolute;
+    /* display: none; */
+    opacity: 0;
+    z-index: 0;
   }
 }

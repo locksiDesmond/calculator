@@ -15,14 +15,33 @@ export default function Outputs(props) {
   }, [state.currentInput]);
   return (
     <React.Fragment>
-      <div className="output">
+      <div
+        className="output"
+        style={{
+          backgroundColor: state.theme.output,
+          color: state.theme.outputText,
+        }}
+      >
         <p className="current-input">{currentState}</p>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
           <span style={{ fontSize: "1.7rem" }}>=</span>
-          <p className="current-answer">&nbsp;{state.solution}</p>
+          <p className="current-answer" style={{ color: state.theme.adColor }}>
+            &nbsp;
+            {state.solution &&
+              state.solution
+                .toString()
+                .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
+          </p>
         </div>
       </div>
-      <span className="hamburger"> !!!</span>
+      <span onClick={() => props.toggle()} className="hamburger">
+        !!!
+      </span>
     </React.Fragment>
   );
 }
