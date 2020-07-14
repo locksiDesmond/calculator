@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { store } from "../../store";
+import hambugger from "../../images/svg/Menu-dark.svg";
+import hambuggerLight from "../../images/svg/Menu-light.svg";
 import "./output.css";
 export default function Outputs(props) {
   const { state } = useContext(store);
@@ -40,7 +42,11 @@ export default function Outputs(props) {
         </div>
       </div>
       <span onClick={() => props.toggle()} className="hamburger">
-        !!!
+        {state.theme.mode === "daylight" ? (
+          <img src={hambugger} alt="hambugger" />
+        ) : (
+          <img src={hambuggerLight} alt="hambugger" />
+        )}
       </span>
     </React.Fragment>
   );

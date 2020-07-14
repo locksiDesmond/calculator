@@ -1,5 +1,5 @@
 export const InputValue = (value, currentInput) => {
-  if (currentInput.length < 16) {
+  if (currentInput.length < 18) {
     if (Number(value)) {
       // Add digit
       let currentInputValue = currentInput;
@@ -39,7 +39,7 @@ export function handleArithmetic(value, state) {
     arithmeticValue.length - 1,
     arithmeticValue.length
   );
-  if (!Number(lastItem)) {
+  if (lastItem !== "0" && !Number(lastItem)) {
     const newvalue = state.slice(0, state.length - 1);
     return checkvalue(value, newvalue);
   }
@@ -78,9 +78,13 @@ class Evaluate {
     return result;
   }
   eval(e) {
-    //eslint-disable-next-line
-    const answer = eval(e);
-    return answer;
+    try {
+      //eslint-disable-next-line
+      const answer = eval(e);
+      return answer;
+    } catch (err) {
+      return e;
+    }
   }
 }
 export const Solve = (value) => {
@@ -93,7 +97,8 @@ export const Solve = (value) => {
   if (Number(lastItem) || lastItem === "0") {
     const solve = new Evaluate();
     const result = solve.foo(value);
-    return result;
+    return Math.round((result + Number.EPSILON) * 10000) / 10000;
+    // return Math.round(3) result;
   } else if (lastItem === "%") {
     const newvalue = value.slice(0, value.length - 1);
     const a = Number(newvalue) / 100;

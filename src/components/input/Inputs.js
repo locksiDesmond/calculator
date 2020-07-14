@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import InputDiv from "./InputDiv";
 import "./inputs.css";
+import divide from "../../images/svg/divide.svg";
+import deleteIcon from "../../images/svg/delete.svg";
 import { store } from "../../store";
 export default function Inputs(props) {
   const { state } = useContext(store);
@@ -23,7 +25,7 @@ export default function Inputs(props) {
       <InputDiv style={adStyle} clear value="C" />
       <InputDiv style={arithmeticStyle} arithmetic value="%" />
       <InputDiv style={arithmeticStyle} arithmetic value="X" />
-      <InputDiv style={arithmeticStyle} arithmetic value="/" />
+      <InputDiv style={arithmeticStyle} arithmetic value="/" image={divide} />
       <InputDiv style={numberStyle} number value="7" />
       <InputDiv style={numberStyle} number value="8" />
       <InputDiv style={numberStyle} number value="9" />
@@ -45,7 +47,7 @@ export default function Inputs(props) {
         solve
         value="="
       />
-      <InputDiv style={adStyle} value="del" delete />
+      <InputDiv image={deleteIcon} style={adStyle} value="del" delete />
       <InputDiv style={numberStyle} number value="0" />
       <InputDiv style={arithmeticStyle} arithmetic value="." />
     </div>

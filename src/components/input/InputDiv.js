@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { store } from "../../store";
+import divide from "../../images/svg/divide.svg";
 import * as Types from "../../Types";
 
 export default function InputDiv(props) {
@@ -8,6 +9,8 @@ export default function InputDiv(props) {
     justifyContent: "center",
     alignItems: "center",
     border: " 1px solid #EDF0EE",
+    fontSize: "1.5rem",
+    fontWeight: "bold",
     ...props.style,
   };
 
@@ -37,7 +40,7 @@ export default function InputDiv(props) {
   };
   return (
     <div onClick={handleClick} style={style}>
-      {props.value}
+      {props.image ? <img src={props.image} alt="arithmetic" /> : props.value}
     </div>
   );
 }

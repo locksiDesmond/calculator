@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import "./sidenav.css";
 import * as Types from "../../Types";
+import No from "../../images/svg/No.svg";
+import On from "../../images/svg/Switch On.svg";
+import Off from "../../images/svg/Switch off.svg";
 import { store } from "../../store";
 export default function Sidenav(props) {
   const { state, dispatch } = useContext(store);
@@ -13,20 +16,27 @@ export default function Sidenav(props) {
       <h1>Calculator</h1>
       <p className="by">by Locksi</p>
       <span onClick={() => props.toggle()} className="close">
-        X
+        <img src={No} alt="No" />
       </span>
 
-      <div className="toggle">
-        <p>
-          Night mode{" "}
+      <div
+        style={{ backgroundColor: theme.history, color: theme.historyText }}
+        className="toggle"
+      >
+        <div style={{ display: "flex", width: "-webkit-fill-available" }}>
+          Night mode
           <span onClick={() => dispatch({ type: Types.TOGGLETHEME })}>
-            toggle
+            {theme.mode === "daylight" ? (
+              <img src={Off} alt="off" />
+            ) : (
+              <img src={On} alt="on" />
+            )}
           </span>
-        </p>
+        </div>
       </div>
       <div
         className="history"
-        style={{ backgroundColor: theme.history, color: theme.history }}
+        style={{ backgroundColor: theme.history, color: theme.historyText }}
       >
         <h2>History</h2>
         <ul className="history-list">

@@ -1,10 +1,9 @@
 .sidenav-div {
-  position: relative;
   display: flex;
   flex-direction: column;
   height: 95vh;
   overflow: hidden;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 .sidenav-div h1,
@@ -15,7 +14,7 @@
 
 span.close {
   position: absolute;
-  top: 0rem;
+  top: 1rem;
   right: 1rem;
 }
 .toggle {
@@ -23,7 +22,11 @@ span.close {
   height: 3rem;
   border-radius: 5px;
   padding: 0.7rem 0.6rem;
-  margin: 0.9rem auto;
+  margin: 0.5rem 1rem;
+}
+
+.toggle span {
+  margin-left: auto;
 }
 .history {
   margin-top: 2rem;
