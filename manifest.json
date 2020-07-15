@@ -1,0 +1,25 @@
+{
+  "short_name": "A simple Calculator",
+  "name": "A Simple calculator by Locksi",
+  "icons": [
+    {
+      "src": "calculator.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "calculator-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "calculator-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#fff",
+  "background_color": "#14213D"
+}
