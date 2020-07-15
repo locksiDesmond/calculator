@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Calculator from "./components/Calculator";
 import { StateProvider } from "./store";
 

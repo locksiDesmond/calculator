@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import "./sidenav.css";
 import * as Types from "../../Types";
-import No from "../../images/svg/No.svg";
+import NoLight from "../../images/svg/No light.svg";
+import NoDark from "../../images/svg/No-dark.svg";
 import On from "../../images/svg/Switch On.svg";
 import Off from "../../images/svg/Switch off.svg";
 import { store } from "../../store";
@@ -16,7 +17,11 @@ export default function Sidenav(props) {
       <h1>Calculator</h1>
       <p className="by">by Locksi</p>
       <span onClick={() => props.toggle()} className="close">
-        <img src={No} alt="No" />
+        {theme.mode === "daylight" ? (
+          <img src={NoDark} alt="No" />
+        ) : (
+          <img src={NoLight} alt="No" />
+        )}
       </span>
 
       <div
@@ -65,16 +70,7 @@ export default function Sidenav(props) {
           ))}
         </ul>
       </div>
-      <p
-        style={{
-          position: "absolute",
-          bottom: "0",
-          fontSize: ".8rem",
-          left: "4rem",
-        }}
-      >
-        &copy; 2020
-      </p>
+      <p className="copyright">&copy; 2020</p>
     </div>
   );
 }

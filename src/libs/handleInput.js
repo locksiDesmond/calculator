@@ -95,7 +95,6 @@ export const Solve = (value) => {
     const solve = new Evaluate();
     const result = solve.foo(value);
     return Math.round((result + Number.EPSILON) * 10000) / 10000;
-    // return Math.round(3) result;
   } else if (lastItem === "%") {
     const newvalue = value.slice(0, value.length - 1);
     const a = Number(newvalue) / 100;
