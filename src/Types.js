@@ -5,3 +5,4 @@ export const ARITHMETIC = "ARITHMETIC";
 export const SOLVE = "SOLVE ";
 export const CLEARSOLVE = "CLEARSOLVE";
 export const TOGGLETHEME = "TOGGLETHEME";
+export const TiMETRAVEL = "TiMETRAVEL";

@@ -27,7 +27,11 @@ export function Reducer(state, action) {
         solution: "",
         history: [
           ...history,
-          { solution: stateSolution, arithmetic: stateArithmetic },
+          {
+            solution: stateSolution,
+            arithmetic: stateArithmetic,
+            history: { ...state },
+          },
         ],
       };
     case Types.TOGGLETHEME:
@@ -36,6 +40,8 @@ export function Reducer(state, action) {
       } else {
         return { ...state, theme: Daylight };
       }
+    case Types.TiMETRAVEL:
+      return { ...state, ...action.payload };
     default:
       throw new Error();
   }

@@ -39,7 +39,7 @@ export default function InputDiv(props) {
     }
   };
   return (
-    <div onClick={handleClick} style={style}>
+    <div onClick={handleClick} className="input-div" style={style}>
       {props.image ? <img src={props.image} alt="arithmetic" /> : props.value}
     </div>
   );

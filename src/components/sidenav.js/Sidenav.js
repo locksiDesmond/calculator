@@ -24,7 +24,12 @@ export default function Sidenav(props) {
         className="toggle"
       >
         <div style={{ display: "flex", width: "-webkit-fill-available" }}>
-          Night mode
+          {theme.mode === "daylight" ? (
+            <span>Daylight mode</span>
+          ) : (
+            <span> Night mode</span>
+          )}
+
           <span onClick={() => dispatch({ type: Types.TOGGLETHEME })}>
             {theme.mode === "daylight" ? (
               <img src={Off} alt="off" />
@@ -34,6 +39,9 @@ export default function Sidenav(props) {
           </span>
         </div>
       </div>
+      <span style={{ color: "#e5e5e5", alignSelf: "center" }}>
+        Black lives matters
+      </span>
       <div
         className="history"
         style={{ backgroundColor: theme.history, color: theme.historyText }}
@@ -41,7 +49,12 @@ export default function Sidenav(props) {
         <h2>History</h2>
         <ul className="history-list">
           {state.history.map((item, index) => (
-            <li className="history-list-item">
+            <li
+              className="history-list-item"
+              onClick={() =>
+                dispatch({ type: Types.TiMETRAVEL, payload: item.history })
+              }
+            >
               <p className="query">{item.arithmetic}</p>
               <p className="answer">
                 <span> =</span>

@@ -12,7 +12,7 @@ export default function Outputs(props) {
       .toString()
       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 
-    result = result.toString().replace(/[/]/g, "divide");
+    // result = result.toString().replace(/[/]/g, "divide");
     setCurrentState(result);
   }, [state.currentInput]);
   return (
@@ -31,7 +31,7 @@ export default function Outputs(props) {
             alignItems: "center",
           }}
         >
-          <span style={{ fontSize: "1.7rem" }}>=</span>
+          <span style={{ fontSize: "2.7rem" }}>=</span>
           <p className="current-answer" style={{ color: state.theme.adColor }}>
             &nbsp;
             {state.solution &&
