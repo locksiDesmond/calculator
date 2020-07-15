@@ -1,13 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useCallback } from "react";
 import InputDiv from "./InputDiv";
 import "./inputs.css";
 import divide from "../../images/svg/divide.svg";
 import deleteIcon from "../../images/svg/delete.svg";
 import { store } from "../../store";
+import handleWindowClicks from "./../../libs/handleWindowClicks";
 export default function Inputs(props) {
-  const { state } = useContext(store);
+  const { state, dispatch } = useContext(store);
   const { theme } = state;
+  const windowClick = useCallback(
+    (e) => {
+      handleWindowClicks(state, dispatch, e);
+    },
+    [state, dispatch]
+  );
+  useEffect(() => {
+    window.addEventListener("keyup", windowClick);
 
+    return () => {
+      window.removeEventListener("keyup", windowClick);
+    };
+  }, [windowClick]);
   const numberStyle = {
     backgroundColor: theme.numbers,
     color: "#fff",

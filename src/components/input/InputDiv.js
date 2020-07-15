@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { store } from "../../store";
-import divide from "../../images/svg/divide.svg";
 import * as Types from "../../Types";
 
 export default function InputDiv(props) {

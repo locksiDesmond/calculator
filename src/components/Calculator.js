@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+//  { useState }
 import CalculatorUi from "./CalculatorUi";
-import Loader from "../Loader";
+// import Loader from "../Loader";
 import "./index.css";
 export default function Calculator(props) {
   // const [loading, setLoading] = useState(true);

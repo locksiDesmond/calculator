@@ -51,6 +51,7 @@ export default function Sidenav(props) {
           {state.history.map((item, index) => (
             <li
               className="history-list-item"
+              key={index}
               onClick={() =>
                 dispatch({ type: Types.TiMETRAVEL, payload: item.history })
               }
@@ -64,6 +65,16 @@ export default function Sidenav(props) {
           ))}
         </ul>
       </div>
+      <p
+        style={{
+          position: "absolute",
+          bottom: "0",
+          fontSize: ".8rem",
+          left: "4rem",
+        }}
+      >
+        &copy; 2020
+      </p>
     </div>
   );
 }

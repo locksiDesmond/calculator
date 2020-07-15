@@ -21,7 +21,6 @@ export function Reducer(state, action) {
     case Types.CLEARSOLVE:
       const stateSolution = state.solution;
       const stateArithmetic = state.currentInput;
-      console.log({ stateSolution, stateArithmetic });
       return {
         ...state,
         solution: "",

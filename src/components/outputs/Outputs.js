@@ -12,7 +12,7 @@ export default function Outputs(props) {
       .toString()
       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 
-    // result = result.toString().replace(/[/]/g, "divide");
+    result = result.toString().replace(/[*]/g, " X ");
     setCurrentState(result);
   }, [state.currentInput]);
   return (

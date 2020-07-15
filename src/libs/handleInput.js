@@ -3,7 +3,6 @@ export const InputValue = (value, currentInput) => {
     if (Number(value)) {
       // Add digit
       let currentInputValue = currentInput;
-      console.log(currentInputValue);
       if (currentInputValue === "0") {
         currentInputValue = "" + value;
       } else if (currentInputValue) {
@@ -43,8 +42,6 @@ export function handleArithmetic(value, state) {
     const newvalue = state.slice(0, state.length - 1);
     return checkvalue(value, newvalue);
   }
-  // const newvalue = state.slice(0, state.length - 1);
-  console.log(value);
   return checkvalue(value, arithmeticValue);
 }
 const checkvalue = (value, arithmeticValue) => {
