@@ -23,7 +23,7 @@ body {
   .sidenav {
     width: 0;
     height: 100vh;
-    opacity: 100%;
+    opacity: 1;
     margin-right: 3rem;
     padding: 0;
     position: absolute;
@@ -33,19 +33,22 @@ body {
     position: absolute;
     bottom: 0;
     display: none;
+    z-index: 2;
     font-size: 0.8rem;
     left: 4rem;
   }
 
   .sidenav.show .copyright {
     display: flex;
+    z-index: 2;
   }
   .sidenav.show {
     display: grid;
     position: absolute;
     width: 15rem;
     z-index: 3;
-    opacity: 100%;
+    z-index: 2;
+    opacity: 1;
   }
 }
 @media (min-width: 768px) {
