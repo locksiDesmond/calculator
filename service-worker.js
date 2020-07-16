@@ -53,13 +53,18 @@ self.addEventListener("install", (e) => {
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys().then((cacheNames) => {
-      return Promise.all(
+      try {
+ return Promise.all(
         cacheNames
           .filter(function (cacheName) {})
           .map(function (cacheName) {
             return caches.delete(cacheName);
           })
       );
+      }catch (err){
+        console.log(err);
+      }
+     
     })
   );
 });
