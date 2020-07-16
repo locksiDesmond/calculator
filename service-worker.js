@@ -11,17 +11,16 @@
  * See https://goo.gl/2aRDsh
  */
 
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+;
 importScripts(
-  "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js"
-);
-
-importScripts("./precache-manifest.ccd8e2797a67cc581596832b5f802e3a.js");
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
+  "/calculator/precache-manifest.2314f0365596d43cce08a005c25264d4.js"
+)
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
 });
-
 const CACHE_NAME = "Calculator";
 const urlsToCache = [
   "/",
@@ -32,10 +31,10 @@ const urlsToCache = [
   "/manifest.json",
   "/index.html",
   "/service-worker.js",
-  "/static/js/runtime-main.dbea8c01.js",
-  "/static/js/2.d01a7469.chunk.js",
-  "/static/css/main.26f90762.chunk.css",
-  "/static/js/main.4ea3b387.chunk.js",
+  "/static/js/runtime-main.51f5447e.js",
+  "/static/js/2.f8a0faba.chunk.js",
+  "/static/css/main.e360c61c.chunk.css",
+  "/static/js/main.272bdabf.chunk.js",
   "https://media.giphy.com/media/26tn6Me6pD4Bel37G/giphy-downsized.gif",
   "/static/media/delete.5b9af152.svg",
   "/static/media/divide.973e2023.svg",
@@ -83,6 +82,7 @@ self.addEventListener("fetch", (e) => {
     })
   );
 });
+
 workbox.core.clientsClaim();
 
 /**
@@ -93,9 +93,8 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(
-  workbox.precaching.getCacheKeyForURL("./index.html"),
-  {
-    blacklist: [/^\/_/, /\/[^/?]+\.[^/]+$/],
-  }
-);
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("./index.html"), {
+  
+  blacklist: [/^\/_/,/\/[^/?]+\.[^/]+$/],
+});
+
