@@ -24,6 +24,7 @@ self.addEventListener('message', (event) => {
 const CACHE_NAME = "Calculator";
 const urlsToCache = [
   "/calculator",
+  "locksidesmond.github.io/"
   "/",
   "/calculator/calculator.png",
   "/calculator/calculator-192.png",
@@ -80,11 +81,8 @@ self.addEventListener("fetch", (e) => {
       }
       console.log("Not found in Cache. Calling Network");
       console.log(e.request);
-      try {
         return fetch(e.request);
-      } catch (err) {
-        console.log(err)
-      }
+      
     })
   );
 });
