@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/calculator/static/css/main.e360c61c.chunk.css",
-    "main.js": "/calculator/static/js/main.2dc80f68.chunk.js",
-    "main.js.map": "/calculator/static/js/main.2dc80f68.chunk.js.map",
-    "runtime-main.js": "/calculator/static/js/runtime-main.51f5447e.js",
-    "runtime-main.js.map": "/calculator/static/js/runtime-main.51f5447e.js.map",
-    "static/js/2.ac3159fe.chunk.js": "/calculator/static/js/2.ac3159fe.chunk.js",
-    "static/js/2.ac3159fe.chunk.js.map": "/calculator/static/js/2.ac3159fe.chunk.js.map",
-    "index.html": "/calculator/index.html",
-    "precache-manifest.01e6200914c016bd05ca5f8825b0ac72.js": "/calculator/precache-manifest.01e6200914c016bd05ca5f8825b0ac72.js",
-    "service-worker.js": "/calculator/service-worker.js",
-    "static/css/main.e360c61c.chunk.css.map": "/calculator/static/css/main.e360c61c.chunk.css.map",
-    "static/js/2.ac3159fe.chunk.js.LICENSE.txt": "/calculator/static/js/2.ac3159fe.chunk.js.LICENSE.txt",
-    "static/media/Menu-dark.svg": "/calculator/static/media/Menu-dark.e579ef55.svg",
-    "static/media/Menu-light.svg": "/calculator/static/media/Menu-light.dc3051bb.svg",
-    "static/media/No light.svg": "/calculator/static/media/No light.ac8fbffd.svg",
-    "static/media/No-dark.svg": "/calculator/static/media/No-dark.f67ee90b.svg",
-    "static/media/Switch On.svg": "/calculator/static/media/Switch On.28eaa68c.svg",
-    "static/media/Switch off.svg": "/calculator/static/media/Switch off.637ef6a1.svg",
-    "static/media/delete.svg": "/calculator/static/media/delete.5b9af152.svg",
-    "static/media/divide.svg": "/calculator/static/media/divide.973e2023.svg"
+    "main.css": "./static/css/main.e360c61c.chunk.css",
+    "main.js": "./static/js/main.806bff41.chunk.js",
+    "main.js.map": "./static/js/main.806bff41.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.8b82071a.js",
+    "runtime-main.js.map": "./static/js/runtime-main.8b82071a.js.map",
+    "static/js/2.ac3159fe.chunk.js": "./static/js/2.ac3159fe.chunk.js",
+    "static/js/2.ac3159fe.chunk.js.map": "./static/js/2.ac3159fe.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.08022ae7c4ffba49c81212023baf2bb2.js": "./precache-manifest.08022ae7c4ffba49c81212023baf2bb2.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.e360c61c.chunk.css.map": "./static/css/main.e360c61c.chunk.css.map",
+    "static/js/2.ac3159fe.chunk.js.LICENSE.txt": "./static/js/2.ac3159fe.chunk.js.LICENSE.txt",
+    "static/media/Menu-dark.svg": "./static/media/Menu-dark.e579ef55.svg",
+    "static/media/Menu-light.svg": "./static/media/Menu-light.dc3051bb.svg",
+    "static/media/No light.svg": "./static/media/No light.ac8fbffd.svg",
+    "static/media/No-dark.svg": "./static/media/No-dark.f67ee90b.svg",
+    "static/media/Switch On.svg": "./static/media/Switch On.28eaa68c.svg",
+    "static/media/Switch off.svg": "./static/media/Switch off.637ef6a1.svg",
+    "static/media/delete.svg": "./static/media/delete.5b9af152.svg",
+    "static/media/divide.svg": "./static/media/divide.973e2023.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.51f5447e.js",
+    "static/js/runtime-main.8b82071a.js",
     "static/js/2.ac3159fe.chunk.js",
     "static/css/main.e360c61c.chunk.css",
-    "static/js/main.2dc80f68.chunk.js"
+    "static/js/main.806bff41.chunk.js"
   ]
 }
