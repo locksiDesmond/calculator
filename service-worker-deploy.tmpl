@@ -38,6 +38,7 @@ const urlsToCache = [
   "/calculator/static/js/runtime-main.51f5447e.js",
   "/calculator/static/css/main.e360c61c.chunk.css",
   "https://media.giphy.com/media/26tn6Me6pD4Bel37G/giphy-downsized.gif",
+  "https://locksidesmond.github.io/"
   "/calculator/static/media/delete.5b9af152.svg",
   "/calculator/static/media/divide.973e2023.svg",
   "/calculator/static/media/Menu-dark.e579ef55.svg",
@@ -81,7 +82,11 @@ self.addEventListener("fetch", (e) => {
       }
       console.log("Not found in Cache. Calling Network");
       console.log(e.request);
+      try{
         return fetch(e.request);
+      }catch(err){
+        console.log(err);
+      }
       
     })
   );
