@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 ;
 importScripts(
-  "/calculator/precache-manifest.01e6200914c016bd05ca5f8825b0ac72.js"
+  "./precache-manifest.08022ae7c4ffba49c81212023baf2bb2.js"
 )
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
@@ -31,10 +31,10 @@ const urlsToCache = [
   "/manifest.json",
   "/index.html",
   "/service-worker.js",
-  "/static/js/runtime-main.51f5447e.js",
+  "/static/js/main.806bff41.chunk.js",
   "/static/js/2.ac3159fe.chunk.js",
   "/static/css/main.e360c61c.chunk.css",
-  "/static/js/main.2dc80f68.chunk.js",
+  "/static/js/runtime-main.8b82071a.js",
   "https://media.giphy.com/media/26tn6Me6pD4Bel37G/giphy-downsized.gif",
   "/static/media/delete.5b9af152.svg",
   "/static/media/divide.973e2023.svg",
