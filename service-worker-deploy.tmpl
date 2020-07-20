@@ -24,7 +24,7 @@ self.addEventListener('message', (event) => {
 const CACHE_NAME = "Calculator";
 const urlsToCache = [
   "/calculator",
-  "/locksidesmond.github.io/"
+  "/locksidesmond.github.io/",
   "/",
   "/calculator/calculator.png",
   "/calculator/calculator-192.png",
@@ -38,7 +38,7 @@ const urlsToCache = [
   "/calculator/static/js/runtime-main.51f5447e.js",
   "/calculator/static/css/main.e360c61c.chunk.css",
   "https://media.giphy.com/media/26tn6Me6pD4Bel37G/giphy-downsized.gif",
-  "https://locksidesmond.github.io/"
+  "https://locksidesmond.github.io/",
   "/calculator/static/media/delete.5b9af152.svg",
   "/calculator/static/media/divide.973e2023.svg",
   "/calculator/static/media/Menu-dark.e579ef55.svg",
