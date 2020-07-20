@@ -4,5 +4,6 @@
   grid-template-rows: repeat(5, 1fr);
 }
 .input-div:hover {
-  opacity: 75%;
+  opacity: 0.75;
+  border: 0;
 }

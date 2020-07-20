@@ -8,12 +8,18 @@ export default function Outputs(props) {
   const [currentState, setCurrentState] = useState("");
   useEffect(() => {
     const currentInputInstance = state.currentInput;
-    let result = currentInputInstance
-      .toString()
-      .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+    if (currentInputInstance === "1+1") {
+      setCurrentState("you are just too dumb");
+    } else if (currentInputInstance === "0+0") {
+      setCurrentState("you gotta be kidding me 🤣");
+    } else {
+      let result = currentInputInstance
+        .toString()
+        .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 
-    result = result.toString().replace(/[*]/g, " X ");
-    setCurrentState(result);
+      result = result.toString().replace(/[*]/g, " X ");
+      setCurrentState(result);
+    }
   }, [state.currentInput]);
   return (
     <React.Fragment>
