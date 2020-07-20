@@ -23,9 +23,8 @@ self.addEventListener('message', (event) => {
 });
 const CACHE_NAME = "Calculator";
 const urlsToCache = [
-  "/calculator",
+  "/calculator/",
   "https://locksidesmond.github.io/calculator/",
-  "/",
   "/calculator/calculator.png",
   "/calculator/calculator-192.png",
   "/calculator/calculator-512.png",
