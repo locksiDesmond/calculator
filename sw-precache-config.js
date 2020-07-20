@@ -1,7 +1,7 @@
 module.exports = {
   staticFileGlobs: ["build/static/css/**.css", "build/static/js/**.js"],
   swFilePath: "./build/service-worker.js",
-  templateFilePath: "./service-worker.tmpl",
+  templateFilePath: "./service-worker-deploy.tmpl",
   stripPrefix: "build/",
   handleFetch: false,
   runtimeCaching: [
