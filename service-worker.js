@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 ;
 importScripts(
-  "./precache-manifest.08022ae7c4ffba49c81212023baf2bb2.js"
+  "/calculator/precache-manifest.01e6200914c016bd05ca5f8825b0ac72.js"
 )
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
@@ -23,27 +23,27 @@ self.addEventListener('message', (event) => {
 });
 const CACHE_NAME = "Calculator";
 const urlsToCache = [
-  "/",
-  "/calculator.png",
-  "/calculator-192.png",
-  "/calculator-512.png",
-  "/asset-manifest.json",
-  "/manifest.json",
-  "/index.html",
-  "/service-worker.js",
-  "/static/js/main.806bff41.chunk.js",
-  "/static/js/2.ac3159fe.chunk.js",
-  "/static/css/main.e360c61c.chunk.css",
-  "/static/js/runtime-main.8b82071a.js",
+  "/calculator",
+  "/calculator/calculator.png",
+  "/calculator/calculator-192.png",
+  "/calculator/calculator-512.png",
+  "/calculator/asset-manifest.json",
+  "/calculator/manifest.json",
+  "/calculator/index.html",
+  "/calculator/service-worker.js",
+  "/calculator/static/js/2.ac3159fe.chunk.js",
+  "/calculator/static/js/main.2dc80f68.chunk.js",
+  "/calculator/static/js/runtime-main.51f5447e.js",
+  "/calculator/static/css/main.e360c61c.chunk.css",
   "https://media.giphy.com/media/26tn6Me6pD4Bel37G/giphy-downsized.gif",
-  "/static/media/delete.5b9af152.svg",
-  "/static/media/divide.973e2023.svg",
-  "/static/media/Menu-dark.e579ef55.svg",
-  "/static/media/Menu-light.dc3051bb.svg",
-  "/static/media/No light.ac8fbffd.svg",
-  "/static/media/No-dark.f67ee90b.svg",
-  "/static/media/Switch off.637ef6a1.svg",
-  "/static/media/Switch On.28eaa68c.svg",
+  "/calculator/static/media/delete.5b9af152.svg",
+  "/calculator/static/media/divide.973e2023.svg",
+  "/calculator/static/media/Menu-dark.e579ef55.svg",
+  "/calculator/static/media/Menu-light.dc3051bb.svg",
+  "/calculator/static/media/No light.ac8fbffd.svg",
+  "/calculator/static/media/No-dark.f67ee90b.svg",
+  "/calculator/static/media/Switch off.637ef6a1.svg",
+  "/calculator/static/media/Switch On.28eaa68c.svg",
 ];
 self.addEventListener("install", (e) => {
   e.waitUntil(
