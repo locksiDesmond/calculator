@@ -24,7 +24,7 @@ self.addEventListener('message', (event) => {
 const CACHE_NAME = "Calculator";
 const urlsToCache = [
   "/calculator",
-  "locksidesmond.github.io/"
+  "/locksidesmond.github.io/"
   "/",
   "/calculator/calculator.png",
   "/calculator/calculator-192.png",
