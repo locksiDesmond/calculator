@@ -80,11 +80,8 @@ self.addEventListener("fetch", (e) => {
       }
       console.log("Not found in Cache. Calling Network");
       console.log(e.request);
-      try {
         return fetch(e.request);
-      } catch (err) {
-        console.log(err)
-      }
+      
     })
   );
 });
