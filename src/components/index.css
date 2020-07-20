@@ -57,5 +57,6 @@ body {
   }
   .sidenav {
     display: grid;
+    border: 1px solid #edf0ee;
   }
 }

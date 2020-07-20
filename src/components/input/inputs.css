@@ -5,4 +5,5 @@
 }
 .input-div:hover {
   opacity: 0.75;
+  border: 0;
 }
