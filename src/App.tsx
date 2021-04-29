@@ -1,12 +1,12 @@
 import React from "react";
-import Calculator from "./components/Calculator";
-import { StateProvider } from "./store";
+import CalculatorProvider from "@provider/CalculatorProvider";
+import Calculator from "@components/Calculator";
 
 function App() {
   return (
-    <StateProvider>
+    <CalculatorProvider>
       <Calculator />
-    </StateProvider>
+    </CalculatorProvider>
   );
 }
 

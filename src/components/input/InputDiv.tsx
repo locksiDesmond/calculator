@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { store } from "../../store";
-import * as Types from "../../Types";
+import CalculatorContext  from "@context/CalculatorContext";
+import * as Types from "@utils/Types";
 
-export default function InputDiv(props) {
+export default function InputDiv(props:any) {
   const style = {
     display: "flex",
     justifyContent: "center",
@@ -13,24 +13,23 @@ export default function InputDiv(props) {
     ...props.style,
   };
 
-  const { dispatch, state } = useContext(store);
+  const { dispatch , solution} = useContext(CalculatorContext);
   const handleClick = () => {
     if (props.number) {
-      if (state.solution) {
-        dispatch({ type: Types.CLEARSOLVE });
-        dispatch({ type: Types.CLEARVALUE });
+      if (solution) {
+        dispatch({ type: Types.CLEAR_SOLVE });
+        dispatch({ type: Types.CLEAR });
       }
-      dispatch({ type: Types.INPUTVALUE, payload: props.value });
+      dispatch({ type: Types.INPUT_VALUE, payload: props.value });
     } else if (props.delete) {
-      dispatch({ type: Types.DELETEVALUE });
+      dispatch({ type: Types.DELETE });
     } else if (props.clear) {
-      dispatch({ type: Types.CLEARVALUE });
+      dispatch({ type: Types.CLEAR });
     } else if (props.arithmetic) {
-      if (state.solution) {
-        const solution = state.solution;
-        dispatch({ type: Types.CLEARSOLVE });
-        dispatch({ type: Types.CLEARVALUE });
-        dispatch({ type: Types.INPUTVALUE, payload: solution });
+      if (solution) {
+        dispatch({ type: Types.CLEAR_SOLVE });
+        dispatch({ type: Types.CLEAR });
+        dispatch({ type: Types.INPUT_VALUE, payload: solution });
       }
       dispatch({ type: Types.ARITHMETIC, payload: props.value });
     } else if (props.solve) {

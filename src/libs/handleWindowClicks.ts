@@ -1,5 +1,6 @@
-import * as Types from "../Types";
-export default function handleWindowClicks(state, dispatch, e) {
+import * as Types from "../utils/Types";
+import { Action } from '@utils/reducer.d';
+export default function handleWindowClicks(solution:string, dispatch:(a: Action)=> void, e:any) {
   switch (e.key) {
     case "1":
     case "2":
@@ -11,11 +12,11 @@ export default function handleWindowClicks(state, dispatch, e) {
     case "8":
     case "9":
     case "0":
-      if (state.solution) {
-        dispatch({ type: Types.CLEARSOLVE });
-        dispatch({ type: Types.CLEARVALUE });
+      if (solution) {
+        dispatch({ type: Types.CLEAR_SOLVE });
+        dispatch({ type: Types.CLEAR });
       }
-      dispatch({ type: Types.INPUTVALUE, payload: e.key });
+      dispatch({ type: Types.INPUT_VALUE, payload: e.key });
       break;
     case "/":
     case "+":
@@ -24,11 +25,10 @@ export default function handleWindowClicks(state, dispatch, e) {
     case "*":
     case ".":
     case "%":
-      if (state.solution) {
-        const solution = state.solution;
-        dispatch({ type: Types.CLEARSOLVE });
-        dispatch({ type: Types.CLEARVALUE });
-        dispatch({ type: Types.INPUTVALUE, payload: solution });
+      if (solution) {
+        dispatch({ type: Types.CLEAR_SOLVE });
+        dispatch({ type: Types.CLEAR });
+        dispatch({ type: Types.INPUT_VALUE, payload: solution });
       }
       dispatch({ type: Types.ARITHMETIC, payload: e.key });
       break;

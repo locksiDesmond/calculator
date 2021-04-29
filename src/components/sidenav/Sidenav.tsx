@@ -1,14 +1,17 @@
 import React, { useContext } from "react";
 import "./sidenav.css";
-import * as Types from "../../Types";
-import NoLight from "../../images/svg/No light.svg";
-import NoDark from "../../images/svg/No-dark.svg";
-import On from "../../images/svg/Switch On.svg";
-import Off from "../../images/svg/Switch off.svg";
-import { store } from "../../store";
-export default function Sidenav(props) {
-  const { state, dispatch } = useContext(store);
-  const { theme } = state;
+import * as Types from "@utils/Types";
+
+import NoLight from "../../images/no_light.svg";
+import NoDark from "../../images/no_dark.svg";
+import On from "../../images/switch_on.svg";
+import Off from "../../images/switch_off.svg";
+import CalculatorContext from "@context/CalculatorContext";
+interface SideNav  {
+  toggle: ()=> void;
+}
+ const SideNav:React.FC<SideNav> = ({toggle}) =>  {
+  const {theme,history, dispatch } = useContext(CalculatorContext);
   return (
     <div
       style={{ backgroundColor: theme.sidenav, color: theme.text }}
@@ -16,7 +19,7 @@ export default function Sidenav(props) {
     >
       <h1>Calculator</h1>
       <p className="by">by Locksi</p>
-      <span onClick={() => props.toggle()} className="close">
+      <span onClick={() =>toggle()} className="close">
         {theme.mode === "daylight" ? (
           <img src={NoDark} alt="No" />
         ) : (
@@ -35,7 +38,7 @@ export default function Sidenav(props) {
             <span> Night mode</span>
           )}
 
-          <span onClick={() => dispatch({ type: Types.TOGGLETHEME })}>
+          <span onClick={() => dispatch({ type: Types.TOGGLE_THEME })}>
             {theme.mode === "daylight" ? (
               <img src={Off} alt="off" />
             ) : (
@@ -53,12 +56,12 @@ export default function Sidenav(props) {
       >
         <h2>History</h2>
         <ul className="history-list">
-          {state.history.map((item, index) => (
+          {history.map((item:any) => (
             <li
               className="history-list-item"
-              key={index}
+              key={item.time}
               onClick={() =>
-                dispatch({ type: Types.TiMETRAVEL, payload: item.history })
+                dispatch({ type: Types.TIME_TRAVEL, payload: item.history })
               }
             >
               <p className="query">{item.arithmetic}</p>
@@ -74,3 +77,4 @@ export default function Sidenav(props) {
     </div>
   );
 }
+export default SideNav

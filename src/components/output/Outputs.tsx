@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
-import { store } from "../../store";
-import hambugger from "../../images/svg/Menu-dark.svg";
-import hambuggerLight from "../../images/svg/Menu-light.svg";
+import hambugger from "../../images/Menu-dark.svg";
+import hambuggerLight from "../../images/Menu-light.svg";
+import CalculatorContext from "@context/CalculatorContext";
 import "./output.css";
-export default function Outputs(props) {
-  const { state } = useContext(store);
+export default function Outputs(props:any) {
+  const { currentInput, theme, solution} = useContext(CalculatorContext);
   const [currentState, setCurrentState] = useState("");
   useEffect(() => {
-    const currentInputInstance = state.currentInput;
+    const currentInputInstance = currentInput;
     if (currentInputInstance === "1+1") {
       setCurrentState("you are just too dumb");
     } else if (currentInputInstance === "0+0") {
@@ -20,14 +20,14 @@ export default function Outputs(props) {
       result = result.toString().replace(/[*]/g, " X ");
       setCurrentState(result);
     }
-  }, [state.currentInput]);
+  }, [currentInput]);
   return (
     <React.Fragment>
       <div
         className="output"
         style={{
-          backgroundColor: state.theme.output,
-          color: state.theme.outputText,
+          backgroundColor: theme.output,
+          color: theme.outputText,
         }}
       >
         <p className="current-input">{currentState}</p>
@@ -38,17 +38,17 @@ export default function Outputs(props) {
           }}
         >
           <span style={{ fontSize: "2.7rem" }}>=</span>
-          <p className="current-answer" style={{ color: state.theme.adColor }}>
+          <p className="current-answer" style={{ color: theme.adColor }}>
             &nbsp;
-            {state.solution &&
-              state.solution
+            {solution &&
+              solution
                 .toString()
                 .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
           </p>
         </div>
       </div>
       <span onClick={() => props.toggle()} className="hamburger">
-        {state.theme.mode === "daylight" ? (
+        {theme.mode === "daylight" ? (
           <img src={hambugger} alt="hambugger" />
         ) : (
           <img src={hambuggerLight} alt="hambugger" />

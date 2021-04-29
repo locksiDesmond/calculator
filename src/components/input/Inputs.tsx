@@ -1,18 +1,17 @@
 import React, { useContext, useEffect, useCallback } from "react";
 import InputDiv from "./InputDiv";
 import "./inputs.css";
-import divide from "../../images/svg/divide.svg";
-import deleteIcon from "../../images/svg/delete.svg";
-import { store } from "../../store";
+import divide from "../../images/divide.svg";
+import deleteIcon from "../../images/delete.svg";
 import handleWindowClicks from "./../../libs/handleWindowClicks";
-export default function Inputs(props) {
-  const { state, dispatch } = useContext(store);
-  const { theme } = state;
+import CalculatorContext from "@context/CalculatorContext";
+export default function Inputs() {
+  const {theme,solution , dispatch } = useContext(CalculatorContext);
   const windowClick = useCallback(
     (e) => {
-      handleWindowClicks(state, dispatch, e);
+      handleWindowClicks(solution, dispatch, e);
     },
-    [state, dispatch]
+    [solution, dispatch]
   );
   useEffect(() => {
     window.addEventListener("keyup", windowClick);

@@ -18,11 +18,17 @@
           "@components/*": [
               "src/components/*"
           ],
-          "@config/*": [
-              "src/config/*"
+          "@context/*": [
+              "src/context/*"
           ],
-          "@svg/*": [
-              "src/images/svg/*"
+          "@provider/*": [
+              "src/provider/*"
+          ],
+          "@utils/*": [
+              "src/utils/*"
+          ],
+          "@libs/*": [
+              "src/libs/*"
           ]
       }
   },
