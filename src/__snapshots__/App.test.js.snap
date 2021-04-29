@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calculator 1`] = `
+<div>
+  <div
+    class="body"
+  >
+    <div
+      class="sidenav null"
+      style="background-color: rgb(229, 229, 229); padding: 0px;"
+    >
+      <div
+        class="sidenav-div"
+        style="background-color: rgb(229, 229, 229); color: rgb(0, 0, 0);"
+      >
+        <h1>
+          Calculator
+        </h1>
+        <p
+          class="by"
+        >
+          by Locksi
+        </p>
+        <span
+          class="close"
+        >
+          <img
+            alt="No"
+            src="no_dark.svg"
+          />
+        </span>
+        <div
+          class="toggle"
+          style="background-color: rgb(116, 140, 171); color: rgb(0, 0, 0);"
+        >
+          <div
+            style="display: flex;"
+          >
+            <span>
+              Daylight mode
+            </span>
+            <span>
+              <img
+                alt="off"
+                src="switch_off.svg"
+              />
+            </span>
+          </div>
+        </div>
+        <span
+          style="color: rgb(229, 229, 229); align-self: center;"
+        >
+          Black lives matters
+        </span>
+        <div
+          class="history"
+          style="background-color: rgb(116, 140, 171); color: rgb(0, 0, 0);"
+        >
+          <h2>
+            History
+          </h2>
+          <ul
+            class="history-list"
+          />
+        </div>
+        <p
+          class="copyright"
+        >
+          © 2020
+        </p>
+      </div>
+    </div>
+    <div
+      class="calculator"
+      style="background-color: rgb(229, 229, 229); color: rgb(0, 0, 0);"
+    >
+      <div
+        class="output"
+        style="background-color: rgb(229, 229, 229); color: rgb(138, 144, 158);"
+      >
+        <p
+          class="current-input"
+        />
+        <div
+          style="display: flex; align-items: center;"
+        >
+          <span
+            style="font-size: 2.7rem;"
+          >
+            =
+          </span>
+          <p
+            class="current-answer"
+            style="color: rgb(0, 0, 0);"
+          >
+             
+          </p>
+        </div>
+      </div>
+      <span
+        class="hamburger"
+      >
+        <img
+          alt="hambugger"
+          src="menu_dark.svg"
+        />
+      </span>
+      <div
+        class="inputs"
+      >
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(229, 229, 229); color: rgb(0, 0, 0);"
+        >
+          C
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(116, 140, 171); color: rgb(0, 0, 0);"
+        >
+          %
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(116, 140, 171); color: rgb(0, 0, 0);"
+        >
+          X
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(116, 140, 171); color: rgb(0, 0, 0);"
+        >
+          <img
+            alt="/"
+            src="divide.svg"
+          />
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(138, 144, 158); color: rgb(255, 255, 255);"
+        >
+          7
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(138, 144, 158); color: rgb(255, 255, 255);"
+        >
+          8
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(138, 144, 158); color: rgb(255, 255, 255);"
+        >
+          9
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(116, 140, 171); color: rgb(0, 0, 0);"
+        >
+          +
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(138, 144, 158); color: rgb(255, 255, 255);"
+        >
+          6
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(138, 144, 158); color: rgb(255, 255, 255);"
+        >
+          5
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(138, 144, 158); color: rgb(255, 255, 255);"
+        >
+          4
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(116, 140, 171); color: rgb(0, 0, 0);"
+        >
+          -
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(138, 144, 158); color: rgb(255, 255, 255);"
+        >
+          1
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(138, 144, 158); color: rgb(255, 255, 255);"
+        >
+          2
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(138, 144, 158); color: rgb(255, 255, 255);"
+        >
+          3
+        </button>
+         
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; grid-row-start: 4; grid-row-end: 6; grid-column-start: 4; background-color: rgb(229, 229, 229); color: rgb(0, 0, 0);"
+        >
+          =
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(229, 229, 229); color: rgb(0, 0, 0);"
+        >
+          <img
+            alt="del"
+            src="delete.svg"
+          />
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(138, 144, 158); color: rgb(255, 255, 255);"
+        >
+          0
+        </button>
+        <button
+          class="input-div"
+          style="display: flex; justify-content: center; align-items: center; border: 1px solid #edf0ee; font-size: 1.5rem; font-weight: bold; background-color: rgb(116, 140, 171); color: rgb(0, 0, 0);"
+        >
+          .
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

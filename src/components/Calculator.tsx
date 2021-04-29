@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import Inputs from "./input/Inputs";
 import "./index.css";
 import Outputs from "./output/Outputs";
-import Sidenav from "./sidenav/Sidenav";
+import SideNav from "./sidenav/Sidenav";
 import "./index.css";
 import CalculatorContext from '../context/CalculatorContext';
 
@@ -16,7 +16,7 @@ export default function CalculatorUi() {
         style={{ backgroundColor: theme.sidenav, padding: 0 }}
         className={`sidenav ${showNav ? "show" : null}`}
       >
-        <Sidenav toggle={() => setShowNav(false)} />
+        <SideNav toggle={() => setShowNav(false)} />
       </div>
       <div
         style={{ backgroundColor: "#e5e5e5", color: "#000" }}
