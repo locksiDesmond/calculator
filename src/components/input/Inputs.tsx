@@ -4,7 +4,8 @@ import "./inputs.css";
 import divide from "../../images/divide.svg";
 import deleteIcon from "../../images/delete.svg";
 import handleWindowClicks from "./../../libs/handleWindowClicks";
-import CalculatorContext from "@context/CalculatorContext";
+import CalculatorContext from "../../context/CalculatorContext";
+
 export default function Inputs() {
   const {theme,solution , dispatch } = useContext(CalculatorContext);
   const windowClick = useCallback(

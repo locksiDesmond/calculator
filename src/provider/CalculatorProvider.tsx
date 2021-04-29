@@ -1,6 +1,6 @@
-import CalculatorContext,{ InitialState } from "@context/CalculatorContext";
-import { Reducer } from "@utils/Reducer";
-import { useReducer } from "react";
+import React,{ useReducer } from "react";
+import CalculatorContext,{ InitialState } from "../context/CalculatorContext";
+import { Reducer } from "../utils/Reducer";
 
 
 const { Provider } =CalculatorContext;

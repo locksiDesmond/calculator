@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import CalculatorContext  from "@context/CalculatorContext";
-import * as Types from "@utils/Types";
+import CalculatorContext  from "../../context/CalculatorContext";
+import * as Types from "../../utils/Types";
 
 export default function InputDiv(props:any) {
   const style = {

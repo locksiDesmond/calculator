@@ -3,8 +3,8 @@ import Inputs from "./input/Inputs";
 import "./index.css";
 import Outputs from "./output/Outputs";
 import Sidenav from "./sidenav/Sidenav";
-import CalculatorContext from "@context/CalculatorContext";
 import "./index.css";
+import CalculatorContext from '../context/CalculatorContext';
 
 export default function CalculatorUi() {
   const [showNav, setShowNav] = useState(false);

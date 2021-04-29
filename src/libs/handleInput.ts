@@ -1,4 +1,4 @@
-export const InputValue = (value, currentInput) => {
+export const InputValue = (value:string, currentInput:any) => {
   if (currentInput.length < 18) {
     if (Number(value)) {
       // Add digit
@@ -29,7 +29,7 @@ export const InputValue = (value, currentInput) => {
     return currentInput;
   }
 };
-export function handleArithmetic(value, state) {
+export function handleArithmetic(value:string, state:any) {
   let arithmeticValue = state;
   if (!arithmeticValue) {
     return state;
@@ -44,7 +44,7 @@ export function handleArithmetic(value, state) {
   }
   return checkvalue(value, arithmeticValue);
 }
-const checkvalue = (value, arithmeticValue) => {
+const checkvalue = (value:string, arithmeticValue:string) => {
   switch (value) {
     case "/":
       arithmeticValue += "/";
@@ -70,11 +70,11 @@ const checkvalue = (value, arithmeticValue) => {
   }
 };
 class Evaluate {
-  foo(e) {
+  calculate(e:string) {
     const result = this.eval(e);
     return result;
   }
-  eval(e) {
+  eval(e:string) {
     try {
       //eslint-disable-next-line
       const answer = eval(e);
@@ -84,7 +84,7 @@ class Evaluate {
     }
   }
 }
-export const Solve = (value) => {
+export const Solve = (value:string) => {
   const arithmeticValue = value;
   const lastItem = arithmeticValue.slice(
     arithmeticValue.length - 1,
@@ -93,7 +93,7 @@ export const Solve = (value) => {
 
   if (Number(lastItem) || lastItem === "0") {
     const solve = new Evaluate();
-    const result = solve.foo(value);
+    const result = solve.calculate(value);
     return Math.round((result + Number.EPSILON) * 10000) / 10000;
   } else if (lastItem === "%") {
     const newvalue = value.slice(0, value.length - 1);

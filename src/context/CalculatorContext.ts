@@ -1,6 +1,6 @@
 import { createContext } from "react";
-import { Daylight } from "@utils/ThemeColor";
-import { Action } from '@utils/reducer.d';
+import { Daylight } from "../utils/ThemeColor";
+import { Action } from '../utils/reducer.d';
 
 interface History {
      solution:string,

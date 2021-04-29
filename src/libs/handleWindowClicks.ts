@@ -1,5 +1,6 @@
 import * as Types from "../utils/Types";
-import { Action } from '@utils/reducer.d';
+import { Action } from '../utils/reducer.d';
+
 export default function handleWindowClicks(solution:string, dispatch:(a: Action)=> void, e:any) {
   switch (e.key) {
     case "1":

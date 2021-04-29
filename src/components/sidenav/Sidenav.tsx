@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import "./sidenav.css";
-import * as Types from "@utils/Types";
+import * as Types from "../../utils/Types";
 
 import NoLight from "../../images/no_light.svg";
 import NoDark from "../../images/no_dark.svg";
 import On from "../../images/switch_on.svg";
 import Off from "../../images/switch_off.svg";
-import CalculatorContext from "@context/CalculatorContext";
+import CalculatorContext from "../../context/CalculatorContext";
 interface SideNav  {
   toggle: ()=> void;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
-import hambugger from "../../images/Menu-dark.svg";
-import hambuggerLight from "../../images/Menu-light.svg";
-import CalculatorContext from "@context/CalculatorContext";
+import hambugger from "../../images/menu_dark.svg";
+import hambuggerLight from "../../images/menu_light.svg";
+import CalculatorContext from "../../context/CalculatorContext";
 import "./output.css";
 export default function Outputs(props:any) {
   const { currentInput, theme, solution} = useContext(CalculatorContext);

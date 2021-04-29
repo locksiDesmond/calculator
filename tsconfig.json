@@ -1,42 +1,32 @@
 {
   "compilerOptions": {
-      "target": "es5",
-      "noImplicitAny": true,
-      "allowJs": true,
-      "skipLibCheck": true,
-      "strict": false,
-      "forceConsistentCasingInFileNames": true,
-      "noEmit": true,
-      "esModuleInterop": true,
-      "module": "esnext",
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "jsx": "preserve",
-      "baseUrl": ".",
-      "paths": {
-          "@components/*": [
-              "src/components/*"
-          ],
-          "@context/*": [
-              "src/context/*"
-          ],
-          "@provider/*": [
-              "src/provider/*"
-          ],
-          "@utils/*": [
-              "src/utils/*"
-          ],
-          "@libs/*": [
-              "src/libs/*"
-          ]
-      }
+    "target": "es5",
+    "noImplicitAny": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowSyntheticDefaultImports": true
   },
   "include": [
-      "**/*.ts",
-      "**/*.tsx"
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [
-      "node_modules"
+    "node_modules",
+    "src/libs/mainfest-text.js"
   ]
 }

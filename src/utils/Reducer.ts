@@ -1,6 +1,6 @@
 import * as Types from "./Types";
 import { InputValue, handleArithmetic, Solve } from "../libs/handleInput";
-import { Daylight,NightMode } from '@utils/ThemeColor';
+import { Daylight,NightMode } from './ThemeColor';
 import { Action } from './reducer.d';
 
 export function Reducer(state:any, action:Action) {
