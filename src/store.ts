@@ -1,6 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import { Reducer } from "./Reducer";
 import { Daylight } from "./ThemeColor";
+
 const InitialState = {
   currentInput: "",
   history: [],
