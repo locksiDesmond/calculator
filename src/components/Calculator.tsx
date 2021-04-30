@@ -1,12 +1,11 @@
 import React, { useState, useContext } from 'react';
-import Inputs from './input/Inputs';
-import Outputs from './output/Outputs';
 import SideNav from './sidenav/Sidenav';
 import CalculatorContext from '../context/CalculatorContext';
 import styled, { css } from 'styled-components';
 
 import './index.css';
 import { device } from '../utils/devices';
+import Main from './main';
 interface SideNavContainerType {
   bgColor: string;
   show: boolean;
@@ -22,10 +21,7 @@ export default function Calculator() {
       <SideNavContainer bgColor={theme.sidenav} show={showNav}>
         <SideNav toggle={onClose} />
       </SideNavContainer>
-      <CalculatorWrapper>
-        <Outputs toggle={onOpen} />
-        <Inputs />
-      </CalculatorWrapper>
+      <Main toggle={onOpen} />
     </Container>
   );
 }
@@ -73,11 +69,4 @@ const SideNavContainer = styled.div<SideNavContainerType>`
     display: grid;
     border: 1px solid #edf0ee;
   }
-`;
-const CalculatorWrapper = styled.div`
-  display: grid;
-  padding: 0;
-  grid-template-rows: 160px auto;
-  background-color: '#e5e5e5';
-  color: '#000';
 `;

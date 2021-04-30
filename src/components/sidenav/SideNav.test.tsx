@@ -5,18 +5,22 @@ import React from 'react';
 import SideNav from './Sidenav';
 
 describe('Render SideNav', () => {
+  let sideNav: any;
   beforeEach(() => {
     const props = {
       toggle: () => {},
     };
     render(<SideNav {...props} />);
+    sideNav = screen.getByTestId('side-nav');
   });
-  test('allow user to change background color', () => {
-    const sideNav = screen.getByTestId('side-nav');
-
+  test('renders with correct default color', () => {
     expect(sideNav).toHaveStyle(`background-color:${Daylight.sidenav} `);
     expect(sideNav).toHaveStyle(`color:${Daylight.text} `);
     expect(screen.queryByText(/Daylight/)).toBeInTheDocument();
+    expect(screen.queryByText(/Night/)).toBeNull();
+  });
+  test('allow user to change background color', () => {
+    expect(sideNav).toHaveStyle(`background-color:${Daylight.sidenav} `);
     expect(screen.queryByText(/Night/)).toBeNull();
     fireEvent.click(screen.getByTestId('theme-button'));
     expect(sideNav).toHaveStyle(`background-color:${NightMode.sidenav} `);
@@ -26,8 +30,6 @@ describe('Render SideNav', () => {
   });
 
   test('allow multiple change of background color', () => {
-    const sideNav = screen.getByTestId('side-nav');
-
     expect(sideNav).toHaveStyle(`background-color:${Daylight.sidenav} `);
     expect(sideNav).toHaveStyle(`color:${Daylight.text} `);
     expect(screen.queryByText(/Daylight/)).toBeInTheDocument();

@@ -1,19 +1,19 @@
-import React, { useContext } from "react";
-import CalculatorContext  from "../../context/CalculatorContext";
-import * as Types from "../../utils/Types";
+import React, { useContext } from 'react';
+import CalculatorContext from '../../context/CalculatorContext';
+import * as Types from '../../utils/Types';
 
-export default function InputDiv(props:any) {
+export default function Button(props: any) {
   const style = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    border: " 1px solid #EDF0EE",
-    fontSize: "1.5rem",
-    fontWeight: "bold",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    border: ' 1px solid #EDF0EE',
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
     ...props.style,
   };
 
-  const { dispatch , solution} = useContext(CalculatorContext);
+  const { dispatch, solution } = useContext(CalculatorContext);
   const handleClick = () => {
     if (props.number) {
       if (solution) {
@@ -37,7 +37,12 @@ export default function InputDiv(props:any) {
     }
   };
   return (
-    <button onClick={handleClick} className="input-div" style={style}>
+    <button
+      data-testid={`button-${props.value || ''}`}
+      onClick={handleClick}
+      className="input-div"
+      style={style}
+    >
       {props.image ? <img src={props.image} alt={props.value} /> : props.value}
     </button>
   );
