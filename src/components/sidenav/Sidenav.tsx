@@ -1,26 +1,27 @@
-import React, { useContext } from "react";
-import "./sidenav.css";
-import * as Types from "../../utils/Types";
+import React, { useContext } from 'react';
+import './sidenav.css';
+import * as Types from '../../utils/Types';
 
-import NoLight from "../../images/no_light.svg";
-import NoDark from "../../images/no_dark.svg";
-import On from "../../images/switch_on.svg";
-import Off from "../../images/switch_off.svg";
-import CalculatorContext from "../../context/CalculatorContext";
-interface SideNav  {
-  toggle: ()=> void;
+import NoLight from '../../images/no_light.svg';
+import NoDark from '../../images/no_dark.svg';
+import On from '../../images/switch_on.svg';
+import Off from '../../images/switch_off.svg';
+import CalculatorContext from '../../context/CalculatorContext';
+interface SideNav {
+  toggle: () => void;
 }
- const SideNav:React.FC<SideNav> = ({toggle}) =>  {
-  const {theme,history, dispatch } = useContext(CalculatorContext);
+const SideNav: React.FC<SideNav> = ({ toggle }) => {
+  const { theme, history, dispatch } = useContext(CalculatorContext);
   return (
     <div
+      data-testid="side-nav"
       style={{ backgroundColor: theme.sidenav, color: theme.text }}
       className="sidenav-div"
     >
       <h1>Calculator</h1>
       <p className="by">by Locksi</p>
-      <span onClick={() =>toggle()} className="close">
-        {theme.mode === "daylight" ? (
+      <span onClick={() => toggle()} className="close">
+        {theme.mode === 'daylight' ? (
           <img src={NoDark} alt="No" />
         ) : (
           <img src={NoLight} alt="No" />
@@ -31,15 +32,18 @@ interface SideNav  {
         style={{ backgroundColor: theme.history, color: theme.historyText }}
         className="toggle"
       >
-        <div style={{ display: "flex", width: "-webkit-fill-available" }}>
-          {theme.mode === "daylight" ? (
+        <div style={{ display: 'flex', width: '100%' }}>
+          {theme.mode === 'daylight' ? (
             <span>Daylight mode</span>
           ) : (
             <span> Night mode</span>
           )}
 
-          <span onClick={() => dispatch({ type: Types.TOGGLE_THEME })}>
-            {theme.mode === "daylight" ? (
+          <span
+            data-testid="theme-button"
+            onClick={() => dispatch({ type: Types.TOGGLE_THEME })}
+          >
+            {theme.mode === 'daylight' ? (
               <img src={Off} alt="off" />
             ) : (
               <img src={On} alt="on" />
@@ -47,7 +51,7 @@ interface SideNav  {
           </span>
         </div>
       </div>
-      <span style={{ color: "#e5e5e5", alignSelf: "center" }}>
+      <span style={{ color: '#e5e5e5', alignSelf: 'center' }}>
         Black lives matters
       </span>
       <div
@@ -56,7 +60,7 @@ interface SideNav  {
       >
         <h2>History</h2>
         <ul className="history-list">
-          {history.map((item:any) => (
+          {history.map((item: any) => (
             <li
               className="history-list-item"
               key={item.time}
@@ -76,5 +80,5 @@ interface SideNav  {
       <p className="copyright">&copy; 2020</p>
     </div>
   );
-}
-export default SideNav
+};
+export default SideNav;

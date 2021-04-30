@@ -1,35 +1,7 @@
-body {
-  padding: 0;
-  margin: 0;
-  font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
-  font-size: 20px;
-}
-.body {
-  display: grid;
-  height: 100vh;
-  width: -webkit-fill-available;
-  grid-template-columns: 1fr minmax(3fr, auto);
-}
-.body > * {
-  padding: 1rem;
-}
 .calculator {
-  display: grid;
-  padding: 0;
-  grid-template-rows: 160px auto;
 }
 
-@media (max-width: 767px) {
-  .sidenav {
-    width: 0;
-    height: 100vh;
-    opacity: 1;
-    margin-right: 3rem;
-    padding: 0;
-    position: absolute;
-    transition: width 0.34s ease;
-  }
-  .copyright {
+ .copyright {
     position: absolute;
     bottom: 0;
     display: none;
@@ -38,19 +10,6 @@ body {
     left: 4rem;
   }
 
-  .sidenav.show .copyright {
-    display: flex;
-    z-index: 2;
-  }
-  .sidenav.show {
-    display: grid;
-    position: absolute;
-    width: 15rem;
-    z-index: 3;
-    z-index: 2;
-    opacity: 1;
-  }
-}
 @media (min-width: 768px) {
   .body {
     grid-template-columns: 1fr 3fr;
