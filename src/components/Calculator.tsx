@@ -15,7 +15,7 @@ export default function Calculator() {
   const [showNav, setShowNav] = useState(false);
   const { theme } = useContext(CalculatorContext);
   const onClose = () => setShowNav(false);
-  const onOpen = () => setShowNav(false);
+  const onOpen = () => setShowNav(true);
   return (
     <Container>
       <SideNavContainer bgColor={theme.sidenav} show={showNav}>

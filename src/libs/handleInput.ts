@@ -34,43 +34,54 @@ export const InputValue = (value: string, input: any) => {
     return input;
   }
 };
-
-export const handleArithmetic = (value: string, state: any) => {
-  let arithmetic = state;
-  if (!arithmetic) {
-    return state;
+/**
+ * This handles concatenating arithmetics to state
+ * @param arithmetic arithmetic to be added to state. e.g +, -
+ * @param currentState string to be adding to.
+ * @returns string
+ */
+export const handleArithmetic = (arithmetic: string, currentState: any) => {
+  let state = currentState;
+  if (!state) {
+    if (arithmetic !== '-') return state;
   }
-  const lastItem = arithmetic.slice(arithmetic.length - 1, arithmetic.length);
+  const lastItem = state.slice(state.length - 1, state.length);
   if (lastItem !== '0' && !Number(lastItem)) {
     const newValue = state.slice(0, state.length - 1);
-    return checkValue(value, newValue);
+    return checkValue(arithmetic, newValue);
   }
-  return checkValue(value, arithmetic);
+  return checkValue(arithmetic, state);
 };
 
-const checkValue = (value: string, arithmetic: string) => {
-  switch (value) {
+/**
+ *
+ * @param arithmetic arithmetics to add to state
+ * @param state string to concatenate arithmetic with
+ * @returns string
+ */
+const checkValue = (arithmetic: string, state: string) => {
+  switch (arithmetic) {
     case '/':
-      arithmetic += '/';
-      return arithmetic;
+      state += '/';
+      return state;
     case '+':
-      arithmetic += '+';
-      return arithmetic;
+      state += '+';
+      return state;
     case '-':
-      arithmetic += '-';
-      return arithmetic;
+      state += '-';
+      return state;
     case 'X':
     case '*':
-      arithmetic += '*';
-      return arithmetic;
+      state += '*';
+      return state;
     case '.':
-      arithmetic += '.';
-      return arithmetic;
+      state += '.';
+      return state;
     case '%':
-      arithmetic += '%';
-      return arithmetic;
+      state += '%';
+      return state;
     default:
-      return arithmetic;
+      return state;
   }
 };
 class Evaluate {
