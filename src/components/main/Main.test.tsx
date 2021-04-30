@@ -2,6 +2,7 @@ import { render, screen, fireEvent } from 'src/test-util';
 import React from 'react';
 
 import Main from './index';
+import { message } from '../../helper/toPreview';
 
 describe('Render SideNav', () => {
   let main: any;
@@ -44,5 +45,35 @@ describe('Render SideNav', () => {
     fireEvent.click(screen.getByTestId('button-='));
     expect(screen.getByTestId('current-input')).toHaveTextContent('2 X 4');
     expect(screen.getByTestId('solution')).toHaveTextContent('8');
+  });
+
+  test(`should display ${message.dumb} for 1 + 1`, () => {
+    fireEvent.click(screen.getByText('1'));
+    fireEvent.click(screen.getByTestId('button-+'));
+    fireEvent.click(screen.getByText('1'));
+
+    expect(screen.getByTestId('current-input')).toHaveTextContent(message.dumb);
+    expect(screen.getByTestId('solution')).toHaveTextContent('');
+
+    fireEvent.click(screen.getByTestId('button-='));
+    expect(screen.getByTestId('current-input')).toHaveTextContent(message.dumb);
+    expect(screen.getByTestId('solution')).toHaveTextContent('2');
+  });
+
+  test(`should display ${message.stupid} for 0 + 0`, () => {
+    fireEvent.click(screen.getByText('0'));
+    fireEvent.click(screen.getByTestId('button-+'));
+    fireEvent.click(screen.getByText('0'));
+
+    expect(screen.getByTestId('current-input')).toHaveTextContent(
+      message.stupid
+    );
+    expect(screen.getByTestId('solution')).toHaveTextContent('');
+
+    fireEvent.click(screen.getByTestId('button-='));
+    expect(screen.getByTestId('current-input')).toHaveTextContent(
+      message.stupid
+    );
+    expect(screen.getByTestId('solution')).toHaveTextContent('0');
   });
 });

@@ -1,16 +1,16 @@
-import * as Types from "./Types";
-import { InputValue, handleArithmetic, Solve } from "../libs/handleInput";
-import { Daylight,NightMode } from './ThemeColor';
+import * as Types from './Types';
+import { InputValue, handleArithmetic, Solve } from '../libs/handleInput';
+import { Daylight, NightMode } from './ThemeColor';
 import { Action } from './reducer.d';
 
-export function Reducer(state:any, action:Action) {
+export function Reducer(state: any, action: Action) {
   const { history, currentInput } = state;
   switch (action.type) {
     case Types.INPUT_VALUE:
       const data = InputValue(action.payload, currentInput);
       return { ...state, currentInput: data };
     case Types.CLEAR:
-      return { ...state, currentInput: "" };
+      return { ...state, currentInput: '' };
     case Types.DELETE:
       const value = currentInput.slice(0, currentInput.length - 1);
       return { ...state, currentInput: value };
@@ -25,7 +25,7 @@ export function Reducer(state:any, action:Action) {
       const stateArithmetic = state.currentInput;
       return {
         ...state,
-        solution: "",
+        solution: '',
         history: [
           ...history,
           {
@@ -36,7 +36,7 @@ export function Reducer(state:any, action:Action) {
         ],
       };
     case Types.TOGGLE_THEME:
-      if (state.theme.mode === "daylight") {
+      if (state.theme.mode === 'daylight') {
         return { ...state, theme: NightMode };
       } else {
         return { ...state, theme: Daylight };

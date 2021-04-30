@@ -1,80 +1,84 @@
-export const InputValue = (value:string, currentInput:any) => {
-  if (currentInput.length < 18) {
+/**
+ * @param value - value to add to current state
+ * @param input - the current state
+ * @returns string
+ */
+export const InputValue = (value: string, input: any) => {
+  if (input.length < 18) {
     if (Number(value)) {
       // Add digit
-      let currentInputValue = currentInput;
-      if (currentInputValue === "0") {
-        currentInputValue = "" + value;
-      } else if (currentInputValue) {
-        currentInputValue += value;
+      let inputValue = input;
+      if (inputValue === '0') {
+        inputValue = '' + value;
+      } else if (inputValue) {
+        inputValue += value;
       } else {
-        currentInputValue = "" + value;
+        inputValue = '' + value;
       }
-      return currentInputValue;
-    } else if (value === "0") {
+      return inputValue;
+    } else if (value === '0') {
       // Add zero
-      let currentInputValue = currentInput;
-      if (Number(currentInputValue)) {
-        currentInputValue += value;
-      } else if (currentInputValue.length > 1) {
-        currentInputValue += value;
+      let inputValue = input;
+      if (Number(inputValue)) {
+        inputValue += value;
+      } else if (inputValue.length > 1) {
+        inputValue += value;
       } else {
-        currentInputValue = "" + value;
+        inputValue = '' + value;
       }
-      return currentInputValue;
+      return inputValue;
     } else {
-      return currentInput;
+      return input;
     }
   } else {
-    return currentInput;
+    return input;
   }
 };
-export function handleArithmetic(value:string, state:any) {
-  let arithmeticValue = state;
-  if (!arithmeticValue) {
+
+export const handleArithmetic = (value: string, state: any) => {
+  let arithmetic = state;
+  if (!arithmetic) {
     return state;
   }
-  const lastItem = arithmeticValue.slice(
-    arithmeticValue.length - 1,
-    arithmeticValue.length
-  );
-  if (lastItem !== "0" && !Number(lastItem)) {
-    const newvalue = state.slice(0, state.length - 1);
-    return checkvalue(value, newvalue);
+  const lastItem = arithmetic.slice(arithmetic.length - 1, arithmetic.length);
+  if (lastItem !== '0' && !Number(lastItem)) {
+    const newValue = state.slice(0, state.length - 1);
+    return checkValue(value, newValue);
   }
-  return checkvalue(value, arithmeticValue);
-}
-const checkvalue = (value:string, arithmeticValue:string) => {
+  return checkValue(value, arithmetic);
+};
+
+const checkValue = (value: string, arithmetic: string) => {
   switch (value) {
-    case "/":
-      arithmeticValue += "/";
-      return arithmeticValue;
-    case "+":
-      arithmeticValue += "+";
-      return arithmeticValue;
-    case "-":
-      arithmeticValue += "-";
-      return arithmeticValue;
-    case "X":
-    case "*":
-      arithmeticValue += "*";
-      return arithmeticValue;
-    case ".":
-      arithmeticValue += ".";
-      return arithmeticValue;
-    case "%":
-      arithmeticValue += "%";
-      return arithmeticValue;
+    case '/':
+      arithmetic += '/';
+      return arithmetic;
+    case '+':
+      arithmetic += '+';
+      return arithmetic;
+    case '-':
+      arithmetic += '-';
+      return arithmetic;
+    case 'X':
+    case '*':
+      arithmetic += '*';
+      return arithmetic;
+    case '.':
+      arithmetic += '.';
+      return arithmetic;
+    case '%':
+      arithmetic += '%';
+      return arithmetic;
     default:
-      return arithmeticValue;
+      return arithmetic;
   }
 };
 class Evaluate {
-  calculate(e:string) {
+  calculate(e: string) {
     const result = this.eval(e);
     return result;
   }
-  eval(e:string) {
+  eval(e: string) {
     try {
       //eslint-disable-next-line
       const answer = eval(e);
@@ -84,21 +88,18 @@ class Evaluate {
     }
   }
 }
-export const Solve = (value:string) => {
-  const arithmeticValue = value;
-  const lastItem = arithmeticValue.slice(
-    arithmeticValue.length - 1,
-    arithmeticValue.length
-  );
+export const Solve = (value: string) => {
+  const arithmetic = value;
+  const lastItem = arithmetic.slice(arithmetic.length - 1, arithmetic.length);
 
-  if (Number(lastItem) || lastItem === "0") {
+  if (Number(lastItem) || lastItem === '0') {
     const solve = new Evaluate();
     const result = solve.calculate(value);
     return Math.round((result + Number.EPSILON) * 10000) / 10000;
-  } else if (lastItem === "%") {
-    const newvalue = value.slice(0, value.length - 1);
-    const a = Number(newvalue) / 100;
+  }
+  if (lastItem === '%') {
+    const newValue = value.slice(0, value.length - 1);
+    const a = Number(newValue) / 100;
     return a;
-  } else {
   }
 };
