@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import SideNav from './sidenav/Sidenav';
-import CalculatorContext from '../context/CalculatorContext';
+import { useCalculator } from '../context/CalculatorContext';
 import styled, { css } from 'styled-components';
 
 import './index.css';
@@ -13,7 +13,9 @@ interface SideNavContainerType {
 
 export default function Calculator() {
   const [showNav, setShowNav] = useState(false);
-  const { theme } = useContext(CalculatorContext);
+  const {
+    state: { theme },
+  } = useCalculator();
   const onClose = () => setShowNav(false);
   const onOpen = () => setShowNav(true);
   return (

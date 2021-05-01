@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import CalculatorContext from '../../context/CalculatorContext';
+import React from 'react';
+import { useCalculator } from '../../context/CalculatorContext';
 import * as Types from '../../utils/Types';
 
 export default function Button(props: any) {
@@ -13,7 +13,11 @@ export default function Button(props: any) {
     ...props.style,
   };
 
-  const { dispatch, solution } = useContext(CalculatorContext);
+  const {
+    dispatch,
+    state: { solution },
+  } = useCalculator();
+
   const handleClick = () => {
     if (props.number) {
       if (solution) {

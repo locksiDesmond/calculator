@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './sidenav.css';
 import * as Types from '../../utils/Types';
 
@@ -6,12 +6,16 @@ import NoLight from '../../images/no_light.svg';
 import NoDark from '../../images/no_dark.svg';
 import On from '../../images/switch_on.svg';
 import Off from '../../images/switch_off.svg';
-import CalculatorContext from '../../context/CalculatorContext';
+import { useCalculator } from '../../context/CalculatorContext';
 interface SideNav {
   toggle: () => void;
 }
 const SideNav: React.FC<SideNav> = ({ toggle }) => {
-  const { theme, history, dispatch } = useContext(CalculatorContext);
+  const {
+    state: { theme, history },
+    dispatch,
+  } = useCalculator();
+
   return (
     <div
       data-testid="side-nav"

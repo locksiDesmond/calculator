@@ -1,27 +1,29 @@
-import { createContext } from "react";
-import { Daylight } from "../utils/ThemeColor";
+import { createContext, useContext } from 'react';
 import { Action } from '../utils/reducer.d';
 
 interface History {
-     solution:string,
-     arithmetic:string,
-     history?: History,
-};
-interface InitialState  {
-  currentInput: string,
-  history: History[],
-  solution?:string;
-  arithmetic: string,
-  theme:any,
-  dispatch?:(a:Action)=> void;
+  solution: string;
+  arithmetic: string;
+  history?: History;
+}
+export interface State {
+  currentInput: string;
+  history: History[];
+  solution?: string;
+  arithmetic: string;
+  theme: any;
+}
+type Dispatch = (action: Action) => void;
+
+const CalculatorContext = createContext<
+  { state: State; dispatch: Dispatch } | undefined
+>(undefined);
+export const useCalculator = () => {
+  const context = useContext(CalculatorContext);
+  if (context === undefined) {
+    throw new Error('useCalculator must be used within CalculatorProvider');
+  }
+  return context;
 };
 
-export const InitialState:InitialState= {
-  currentInput: "",
-  history: [],
-  arithmetic: "",
-  theme: Daylight,
-};
-const CalculatorContext = createContext(InitialState);
-
-export default CalculatorContext 
+export default CalculatorContext;

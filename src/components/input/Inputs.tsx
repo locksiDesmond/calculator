@@ -1,14 +1,18 @@
-import React, { useContext, useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import Button from '../Button/Button';
 import divide from '../../images/divide.svg';
 import deleteIcon from '../../images/delete.svg';
 import handleWindowClicks from './../../libs/handleWindowClicks';
-import CalculatorContext from '../../context/CalculatorContext';
+import { useCalculator } from '../../context/CalculatorContext';
 
 import './inputs.css';
 
 export default function Inputs() {
-  const { theme, solution, dispatch } = useContext(CalculatorContext);
+  const {
+    state: { theme, solution },
+    dispatch,
+  } = useCalculator();
+
   const windowClick = useCallback(
     (e) => {
       handleWindowClicks(solution, dispatch, e);

@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import hambugger from '../../images/menu_dark.svg';
 import hambuggerLight from '../../images/menu_light.svg';
-import CalculatorContext from '../../context/CalculatorContext';
+import { useCalculator } from '../../context/CalculatorContext';
 import './output.css';
 import toPreview from '../../helper/toPreview';
 export default function Outputs(props: any) {
-  const { currentInput, theme, solution } = useContext(CalculatorContext);
+  const {
+    state: { currentInput, theme, solution },
+  } = useCalculator();
   const [currentState, setCurrentState] = useState('');
 
   useEffect(() => {
